@@ -106,6 +106,13 @@ Rails.application.routes.draw do
     end
   end
 
+  scope "map_data" do
+    get "problems", to: "map_data#problems"
+    get "areas", to: "map_data#areas"
+    get "clusters", to: "map_data#clusters"
+    get "pois", to: "map_data#pois"
+  end
+
   get "search", to: "search#search", as: :search
   get "/:locale", to: "welcome#index", locale: /#{I18n.available_locales.join('|')}/, as: :root_localized
   root to: "welcome#root"
