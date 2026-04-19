@@ -10,4 +10,11 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       headers: :any,
       methods: [ :get, :head, :options ]
   end
+
+  allow do
+    origins "*"
+    resource "/map_data/*",
+      headers: :any,
+      methods: [ :get, :head, :options ]
+  end
 end
